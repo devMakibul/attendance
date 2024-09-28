@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="title">Attendance Tracker <span class="creator" onclick="window.open('https://makibul.com', '_blank')">by Makibul :)</span></h2>
+        
+    </header>
+
+
+    <div class="container">
+        <div id="month-year-display"></div>
+        <div id="attendance-table"></div>
+        <div class="button-container">
+            <div class="prev-next">
+                <button id="prev-month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42a.996.996 0 0 0-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1"></path></svg></button>
+                Month
+                <button id="next-month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42s1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6a.996.996 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1"></path></svg></button>
+            </div>
+            <div class="import-export">
+                <label for="import-input" class="import-input"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zm-1-4-1.41-1.41L13 12.17V4h-2v8.17L8.41 9.59 7 11l5 5z"></path></svg>Restore</label>
+                <input type="file" id="import-input" accept=".json" />
+                <button id="export-btn"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z"></path></svg>Backup</button>
+            </div>
+        </div>
+
+        <div id="attendance-stats">
+            <h3>Attendance Statistics</h3>
+            <div class="the-final-table">
+                <table id="stats-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Present Days</th>
+                            <th>Absent Days</th>
+                            <th>Attend. %</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stats-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3 class="instruction-title" onclick="toggleInstructions()">Instructions</h3>
+            <ul id="instruction-list" class="collapsed">
+                <li>Double-click on a date card to update attendance for that specific day. Select 'Present,' 'Absent,' or 'No class' for each subject.</li>
+                <li>To customize the subjects for a particular day, use the 'Edit Subjects' button to add or remove subjects as needed.</li>
+                <li><strong>Important:</strong> Since your selections are stored in your browser's local storage, it is strongly recommended to back up your data every 2-3 days to avoid losing it if your browser data is cleared.</li>
+                <li>Color coding for subjects: <strong>Blue</strong> indicates 'Present,' <strong>Red</strong> indicates 'Absent,' and <strong>Grey</strong> indicates 'No class.'</li>
+                <li>Attendance is calculated using the following formula: (Insert your formula here).</li>
+                <li>Use the 'Export Backup' feature to save your attendance data. You can import this file later to restore your data.</li>
+                <li>Navigate between months using the 'Next' and 'Previous' buttons. The current month and year are displayed at the top of the page.</li>
+                <li>Ensure that your browser allows local storage to maintain your attendance records.</li>
+                <li><strong>Disclaimer:</strong> This tool is a personal project made exclusively for my own use. It does not collect or share any data; everything is stored locally in your browser's cache. Please be aware that this tool is not intended for public use, and I will not be responsible for any issues that may arise with your data. The tool might be discontinued or experience problems, so if keeping track of your attendance is important, it's recommended that you maintain your own records independently.</li>
+            </ul>
+        </div>
+
+        
+
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="attendance-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-date-day"></h3>
+                <span id="close-modal">&times;</span>
+            </div>
+            <div id="modal-subjects"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
