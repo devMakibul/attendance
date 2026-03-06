@@ -46,25 +46,90 @@
     </div>
 
     <div class="settings-container">
-        <div class="settings-content">
 
-            <div id="user-info" class="settings-card info-card">
-                <div class="avatar"><i class="ti ti-user"></i></div>
-                <div class="details">
-                    <h2 id="user-name">Loading...</h2>
-                    <p id="user-email">Please wait</p>
+        <div class="minimal-profile">
+            <div class="minimal-avatar"><i class="ti ti-user"></i></div>
+            <div class="minimal-details">
+                <h2 id="user-name">Loading...</h2>
+                <p id="user-email">Please wait</p>
+            </div>
+        </div>
+
+        <div id="settings-message" class="settings-message"></div>
+
+        <div class="minimal-list">
+            <button class="minimal-item" onclick="openModal('name')">
+                <div class="minimal-item-left">
+                    <i class="ti ti-user-edit"></i>
+                    <span>Change Name</span>
+                </div>
+                <i class="ti ti-chevron-right minimal-chevron"></i>
+            </button>
+            <button class="minimal-item" onclick="openModal('password')">
+                <div class="minimal-item-left">
+                    <i class="ti ti-lock"></i>
+                    <span>Change Password</span>
+                </div>
+                <i class="ti ti-chevron-right minimal-chevron"></i>
+            </button>
+            <button class="minimal-item" onclick="openModal('email')">
+                <div class="minimal-item-left">
+                    <i class="ti ti-mail"></i>
+                    <span>Change Email Address</span>
+                </div>
+                <i class="ti ti-chevron-right minimal-chevron"></i>
+            </button>
+            <button class="minimal-item danger-text" id="logout-btn">
+                <div class="minimal-item-left">
+                    <i class="ti ti-logout"></i>
+                    <span>Logout</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Change Data</h2>
+                <button class="close-btn" onclick="closeModal()"><i class="ti ti-x"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 20px 20px;">
+                <p id="modal-desc"
+                    style="text-align: center; color: var(--text-muted, #555); font-size: 0.95rem; margin-bottom: 20px;">
+                    Please enter your new details below.
+                </p>
+
+                <div class="input-group" id="group-new-data">
+                    <i class="ti ti-edit" id="new-data-icon"></i>
+                    <input type="password" id="new-data-input" placeholder="New Value" />
+                </div>
+
+                <div class="input-group" id="group-confirm-data">
+                    <i class="ti ti-key" id="confirm-data-icon"></i>
+                    <input type="password" id="confirm-data-input" placeholder="Confirm New Value" />
+                </div>
+
+                <div class="input-group" id="group-current-password" style="margin-top: 25px;">
+                    <i class="ti ti-lock"></i>
+                    <input type="password" id="current-password" placeholder="Current Password" />
+                </div>
+
+                <div class="show-pwd-container" id="show-pwd-container" style="display: none;">
+                    <label
+                        style="font-size: 0.95rem; color: var(--text-color, #333); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500;">
+                        <input type="checkbox" id="show-modal-pwd" class="custom-checkbox"> Show password
+                    </label>
+                </div>
+
+                <div id="modal-msg" style="text-align: center; font-size: 0.95rem; min-height: 20px; font-weight: 600;">
+                </div>
+
+                <div class="modal-actions" style="margin-top: 15px; display: flex; gap: 15px;">
+                    <button class="stats-row val present" id="modal-save-btn" onclick="submitModal()"
+                        style="flex: 1; justify-content: center; border: none; font-size: 1rem; cursor: pointer; padding: 10px; border-radius: 30px; background-color: #3139FB; color: white;">Save</button>
                 </div>
             </div>
-
-            <div class="settings-card actions-card">
-                <button class="settings-btn" id="reset-pwd-btn"><i class="ti ti-key"></i> Reset
-                    Password</button>
-                <button class="settings-btn danger-btn" id="logout-btn"><i class="ti ti-logout"></i>
-                    Logout</button>
-            </div>
-
-            <p id="settings-message" style="text-align: center; margin-block: 15px; font-size: 0.9rem;"></p>
-
         </div>
     </div>
 
