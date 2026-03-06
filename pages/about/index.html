@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Attendance</title>
+    <meta name="title" content="Attendance Tracker - About">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/stats/style.css">
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+            color: var(--text-color, #333);
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .page-content {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .page-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .page-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content a {
+            color: var(--primary-color, #3139FB);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Attendance Tracker</h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>About Attendance Tracker</h1>
+        </div>
+        <div class="page-content">
+            <p>Welcome to <strong>Attendance Tracker</strong>, your ultimate companion for managing college schedules
+                and monitoring your daily attendance effortlessly.</p>
+
+            <h2>Our Mission</h2>
+            <p>I built Attendance Tracker with a single goal in mind: to help students stay on top of their academic
+                commitments. Keeping track of classes, absences, and overall attendance percentages can be stressful. I
+                simplify this process by offering a clean, intuitive, and centralized dashboard.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Cloud Synchronization:</strong> Seamlessly back up and sync your attendance data across all
+                    your devices using your secure Google or Email account.</li>
+                <li><strong>Interactive Calendar:</strong> A beautiful visual calendar to mark your daily presence or
+                    absence efficiently.</li>
+                <li><strong>Detailed Statistics:</strong> Track your attendance percentages per subject and overall,
+                    ensuring you meet your academic requirements.</li>
+                <li><strong>Attendance Goals:</strong> Instantly know the exact number of classes you need to attend to
+                    reach your target percentage, or how many you can safely afford to miss.</li>
+            </ul>
+
+            <h2>Get in Touch</h2>
+            <p>Attendance Tracker is actively maintained and improved. We'd love to hear your feedback, feature
+                requests, or bug reports. Feel free to contact the developer directly.</p>
+            <p>Made by <a href="https://makibul.com" target="_blank">Makibul</a>.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    document.body.classList.add("scrolled");
+                } else {
+                    document.body.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

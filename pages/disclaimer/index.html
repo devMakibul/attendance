@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Attendance</title>
+    <meta name="title" content="Attendance Tracker - Disclaimer">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/stats/style.css">
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+            color: var(--text-color, #333);
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .page-content {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .page-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .page-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content a {
+            color: var(--primary-color, #3139FB);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Attendance Tracker</h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Disclaimer</h1>
+        </div>
+        <div class="page-content">
+            <p>The information and tools provided by the <strong>Attendance Tracker</strong> application are for general
+                informational purposes only. While we endeavor to keep the service up and running smoothly, we make no
+                representations or warranties of any kind, express or implied, about the completeness, accuracy,
+                reliability, suitability, or availability of the data.</p>
+
+            <h2>Personal Responsibility</h2>
+            <p>Attendance Tracker serves as an organizational utility to help you estimate your adherence to educational
+                or professional attendance requirements. It is <strong>not</strong> a substitute for official
+                university, college, or workplace registration systems. We strongly advise that you cross-reference the
+                statistics presented in this app with your institution's official portal.</p>
+
+            <h2>Data Loss and Service Interruptions</h2>
+            <p>While we use robust backend infrastructure (Firebase) to synchronize and secure your data, network
+                errors, accidental overwrites, or unplanned service downtimes may occur. The developers of Attendance
+                Tracker cannot be held liable, legally or otherwise, for any academic or professional consequences
+                arising from missing data, incorrect calculations, or failure to meet minimum attendance quotas based on
+                the app's output.</p>
+
+            <h2>"As-Is" Distribution</h2>
+            <p>This software is provided "as is", without warranty of any kind. Your use of the service is strictly at
+                your own risk. By registering an account and using the application, you agree to these terms.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    document.body.classList.add("scrolled");
+                } else {
+                    document.body.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

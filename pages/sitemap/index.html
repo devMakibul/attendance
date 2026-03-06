@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Attendance</title>
+    <meta name="title" content="Attendance Tracker - Sitemap">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/stats/style.css">
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+            color: var(--text-color, #333);
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .page-content {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .page-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .page-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .page-content li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .page-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color, #3139FB);
+            font-weight: bold;
+        }
+
+        .page-content a {
+            color: var(--text-color, #333);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .page-content a:hover {
+            color: var(--primary-color, #3139FB);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Attendance Tracker</h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Sitemap</h1>
+        </div>
+        <div class="page-content">
+
+            <h2>Core Features</h2>
+            <ul>
+                <li><a href="/">Home</a> - Features overview and introduction.</li>
+                <li><a href="/login/">Login / Sign Up</a> - Secure authentication and account creation.</li>
+                <li><a href="/schedules/">Schedules</a> - View and manage your subjects and timetables. (Requires Login)
+                </li>
+                <li><a href="/calendar/">Calendar</a> - Track your daily presence and absence visually. (Requires Login)
+                </li>
+                <li><a href="/stats/">Statistics</a> - Dedicated analytics dashboard for evaluating attendance ratios.
+                    (Requires Login)</li>
+                <li><a href="/settings/">Settings</a> - Manage your account email, password, profile name, and system
+                    preferences. (Requires Login)</li>
+            </ul>
+
+            <h2>Informational Pages</h2>
+            <ul>
+                <li><a href="/pages/about/">About</a> - Our mission and platform overview.</li>
+                <li><a href="/pages/privacy/">Privacy Policy</a> - How we collect and secure your data.</li>
+                <li><a href="/pages/disclaimer/">Disclaimer</a> - Terms and legal restrictions of usage.</li>
+                <li><a href="/pages/sitemap/">Sitemap</a> - You are here! Directory mapping of all links.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    document.body.classList.add("scrolled");
+                } else {
+                    document.body.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

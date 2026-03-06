@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Attendance</title>
+    <meta name="title" content="Attendance Tracker - Privacy Policy">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/stats/style.css">
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+            color: var(--text-color, #333);
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .page-content {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .page-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .page-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted, #555);
+        }
+
+        .page-content a {
+            color: var(--primary-color, #3139FB);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Attendance Tracker</h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+        </div>
+        <div class="page-content">
+            <p>Your privacy is important to us. This Privacy Policy outlines how your data is collected, used, and
+                safeguarded when using the Attendance Tracker service.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We may collect personal information such as your Name, Email Address, and Authentication Tokens when you
+                choose to register an account (either via Email/Password or through Third-Party SSO like Google). We
+                also collect user-generated data, which includes your class schedules and daily attendance records.</p>
+
+            <h2>2. How We Use Data</h2>
+            <p>Your data is used strictly for providing and improving the Attendance Tracker features. Authentication
+                tokens are used to keep you securely signed in. Your attendance records are securely synced to your
+                cloud account to allow access across devices and prevent data loss.</p>
+
+            <h2>3. Local Storage and Cookies</h2>
+            <p>We utilize the browser's Local Storage to cache data for offline use and speed up load times. We may use
+                cookies primarily for session
+                authentication purposes.</p>
+
+            <h2>4. Third-Party Services</h2>
+            <p>Our backend and database infrastructure is powered by Google Firebase. Firebase securely handles the
+                storage, token validation, and delivery of your data. We do not sell, rent, or trade your personal
+                information to outside marketing or advertising agencies.</p>
+
+            <h2>5. Data Deletion</h2>
+            <p>You reserve the right to request deletion of your data at any time. By terminating your account, all
+                associated records, configurations, and personal identifiers held on our servers are permanently
+                removed.</p>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time to reflect modifications in our practices or service
+                offerings. Continuous use of our platform constitutes acceptance of those changes.</p>
+            <p>Last updated: 2026-03-07</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    document.body.classList.add("scrolled");
+                } else {
+                    document.body.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
