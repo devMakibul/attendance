@@ -67,10 +67,10 @@
 
   "shortcuts": [
     {
-      "name": "Manage Subjects",
-      "short_name": "Subjects",
-      "description": "Create, upload, search or manage subjects list for your class",
-      "url": "/subjects/",
+      "name": "Manage Schedules",
+      "short_name": "Schedules",
+      "description": "Create or import schedules for your class",
+      "url": "/schedules/",
       "icons": [
         {
           "src": "subjects_96.png",
