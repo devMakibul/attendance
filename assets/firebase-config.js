@@ -1,4 +1,3 @@
-// assets/firebase-config.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
     getAuth,
@@ -7,7 +6,14 @@ import {
     signOut,
     onAuthStateChanged,
     sendPasswordResetEmail,
-    updateProfile
+    updateProfile,
+    EmailAuthProvider,
+    reauthenticateWithCredential,
+    updatePassword,
+    updateEmail,
+    verifyBeforeUpdateEmail,
+    GoogleAuthProvider,
+    signInWithPopup
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
     getFirestore,
@@ -46,6 +52,13 @@ window.firebaseAPI = {
     onAuthStateChanged,
     sendPasswordResetEmail,
     updateProfile,
+    EmailAuthProvider,
+    reauthenticateWithCredential,
+    updatePassword,
+    updateEmail,
+    verifyBeforeUpdateEmail,
+    GoogleAuthProvider,
+    signInWithPopup,
     collection,
     doc,
     setDoc,
