@@ -21,8 +21,9 @@ self.addEventListener('fetch', event => {
 
     if (event.request.method !== 'GET') return;
 
-    if (url.pathname.endsWith('.js') || url.hostname !== location.hostname) {
-        return; 
+    const isExcludedJs = url.pathname.endsWith('.js') && !url.pathname.endsWith('icons.js') && !url.pathname.endsWith('build.js');
+    if (isExcludedJs || url.hostname !== location.hostname) {
+        return;
     }
 
     event.respondWith(
