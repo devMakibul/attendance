@@ -1,0 +1,105 @@
+.settings-container {
+
+    max-width: 600px;
+    margin: auto;
+    padding: 100px 10px 0;
+}
+
+.settings-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #F0F1FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #3139FB;
+    border: 2px solid #e2e2e2;
+}
+
+.details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.details p {
+    color: #555555;
+    font-size: 1rem;
+}
+
+.actions-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #F0F1FA;
+    color: #3139FB;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.settings-btn:hover {
+    background-color: #e5e7ff90;
+    border-color: #cacdff90;
+}
+
+.danger-btn {
+    color: #d32f2f;
+}
+
+.danger-btn:hover {
+    background-color: #fff0f0;
+    border-color: #ffcccc;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #3139FB;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+strong.success-msg {
+    color: #1b5e20;
+}
+
+strong.error-msg {
+    color: #d32f2f;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Settings - Attendance</title>
+    <meta name="title" content="Attendance Tracker - Settings">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+
+    <link rel="stylesheet" href="/assets/bottom-nav.css">
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/stats/style.css">
+
+    <script src="/assets/icons/icons.js"></script>
+    <script src="/assets/navbar.js"></script>
+    <script src="/assets/firebase-config.js" type="module"></script>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Settings</h1>
+            </div>
+            <div id="sync-status-indicator" class="sync-status" style="display: none;"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+            <li><a href="/schedules/"><i class="ti ti-book"></i> <span>Schedules</span></a></li>
+            <li><a href="/calendar/"><i class="ti ti-calendar"></i> <span>Calendar</span></a></li>
+            <li><a href="/stats/"><i class="ti ti-chart-bar"></i> <span>Stats</span></a></li>
+            <li class="active-page"><a href="/settings/"><i class="ti ti-settings"></i> <span>Settings</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="settings-container">
+        <div class="settings-content">
+
+            <div id="user-info" class="settings-card info-card">
+                <div class="avatar"><i class="ti ti-user"></i></div>
+                <div class="details">
+                    <h2 id="user-name">Loading...</h2>
+                    <p id="user-email">Please wait</p>
+                </div>
+            </div>
+
+            <div class="settings-card actions-card">
+                <button class="settings-btn" id="reset-pwd-btn"><i class="ti ti-key"></i> Reset
+                    Password</button>
+                <button class="settings-btn danger-btn" id="logout-btn"><i class="ti ti-logout"></i>
+                    Logout</button>
+            </div>
+
+            <p id="settings-message" style="text-align: center; margin-block: 15px; font-size: 0.9rem;"></p>
+
+        </div>
+    </div>
+
+    <div class="desktop-nav-empty"></div>
+
+    <nav class="bottom-navbar">
+        <a href="/calendar/" class="nav-item">
+            <i class="ti ti-calendar"></i>
+            <span>Calendar</span>
+        </a>
+        <a href="/stats/" class="nav-item">
+            <i class="ti ti-chart-bar"></i>
+            <span>Stats</span>
+        </a>
+        <a href="/schedules/" class="nav-item">
+            <i class="ti ti-book"></i>
+            <span>Schedules</span>
+        </a>
+    </nav>
+
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <a href="/schedules/"><i class="ti ti-book"></i> Schedules</a>
+            <a href="/calendar/"><i class="ti ti-calendar"></i> Calendar</a>
+            <a href="/stats/"><i class="ti ti-chart-bar"></i> Stats</a>
+
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

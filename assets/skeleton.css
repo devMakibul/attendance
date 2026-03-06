@@ -1,0 +1,138 @@
+.skeleton-container {
+    display: block;
+    width: 100%;
+    animation: fade-in 0.3s ease-in-out;
+}
+
+.skeleton-box {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.05) 100%);
+    background-size: 400% 400%;
+    animation: skeleton-pulse 1.2s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+.skeleton-bottom-nav .skeleton-box,
+.skeleton-stats-data .skeleton-box,
+#subjects-skeleton .skeleton-box {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.04) 100%);
+}
+
+body:not(.dark-mode) .skeleton-box.dark-bg-skeleton {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%);
+    background-size: 400% 400%;
+    animation: skeleton-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: -135% 0%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.skeleton-bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px 10px;
+    margin-bottom: 20px;
+    margin: auto;
+    max-width: 600px;
+}
+
+.skeleton-icon-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skeleton-month-pill {
+    width: 200px;
+    height: 45px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.skeleton-calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .skeleton-calendar-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .skeleton-calendar-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .skeleton-calendar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skeleton-day-card {
+    height: 300px;
+    border-radius: 10px;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%);
+    background-size: 400% 400%;
+}
+
+.skeleton-filter-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.skeleton-stats-data {
+    padding: 0 15px;
+}
+
+.skeleton-stats-data .skeleton-filter-row {
+    padding: 15px 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.skeleton-stat-card {
+    height: 115px;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.04) 100%);
+    background-size: 400% 400%;
+}
+
+.skeleton-subject-list-card {
+    height: 200px;
+    width: calc(100% - 20px);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.04) 100%);
+    background-size: 400% 400%;
+    position: relative;
+    left: 10px;
+}

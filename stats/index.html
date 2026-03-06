@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Stats</title>
+    <meta name="title" content="Attendance Tracker">
+    <meta content='Personal class attendance tracking tool' name='description' />
+    <meta content='website' property='og:type' />
+    <meta content='https://attendance.makibul.com/stats/' property='og:url' />
+    <meta content='Attendance Tracker - Personal class attendance tracking tool' property='og:title' />
+    <meta content='Personal class attendance tracking tool' property='og:description' />
+    <meta content='/assets/meta-banner.jpg' property='og:image' />
+    <meta content='summary_large_image' property='twitter:card' />
+    <meta content='@devMakibul' name='twitter:site' />
+    <meta content='@devMakibul' name='twitter:creator' />
+    <meta content='https://attendance.makibul.com/stats/' property='twitter:url' />
+    <meta content='Attendance Tracker - Personal class attendance tracking tool' property='twitter:title' />
+    <meta content='Personal class attendance tracking tool' property='twitter:description' />
+    <meta content='/assets/meta-banner.jpg' property='twitter:image' />
+    <link href='/assets/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180' />
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <link href='/assets/manifest.json' rel='manifest' />
+    <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="c14842ae-4407-4257-837d-42328a45648b"
+        async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/class-switcher.css">
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/bottom-nav.css">
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <script src="/assets/navbar.js"></script>
+    <link rel="stylesheet" href="/assets/skeleton.css">
+
+    <script src="/assets/firebase-config.js" type="module"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Stats</h1>
+            </div>
+            <div id="sync-status-indicator" class="sync-status" style="display: none;"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+            <li><a href="/schedules/"><i class="ti ti-book"></i> <span>Schedules</span></a></li>
+            <li><a href="/calendar/"><i class="ti ti-calendar"></i> <span>Calendar</span></a></li>
+            <li class="active-page"><a href="/stats/"><i class="ti ti-chart-bar"></i> <span>Stats</span></a></li>
+            <li><a href="/settings/"><i class="ti ti-settings"></i> <span>Settings</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="stats-skeleton" class="skeleton-container">
+        <div class="info-wrap">
+            <div class="table-info skeleton-box"
+                style="max-width: 600px; margin: auto; height: 119px; border-radius: 20px;"></div>
+        </div>
+        <div class="calendar-data skeleton-stats-data">
+            <div class="skeleton-filter-row">
+                <div class="skeleton-box" style="height: 40px; width: 73%; border-radius: 20px;"></div>
+                <div class="skeleton-box" style="height: 40px; width: 24%; border-radius: 20px;"></div>
+            </div>
+            <div class="skeleton-box skeleton-stat-card"></div>
+            <div class="skeleton-box skeleton-stat-card"></div>
+            <div class="skeleton-box skeleton-stat-card"></div>
+        </div>
+    </div>
+
+    <div class="info-wrap" id="stats-info-wrap" style="display: none;">
+        <div id="info"></div>
+    </div>
+
+    <div class="calendar-data" id="stats-calendar-data" style="display: none;">
+
+        <div class="controls-wrapper">
+            <div id="attendance-threshold-container"></div>
+            <div id="subject-filter-container" class="filter-container">
+                <div class="filter-dropdown-btn" id="filter-dropdown-btn">
+                    <i class="ti ti-filter"></i> Filter
+                    <span id="filter-badge" class="filter-badge hidden"><i class="ti ti-check"></i></span>
+                </div>
+                <div class="filter-dropdown-content hidden" id="filter-dropdown-content">
+                    <label class="filter-option"><input type="checkbox" value="All" checked> All</label>
+                    <label class="filter-option"><input type="checkbox" value="ahead" checked> Ahead of Goal</label>
+                    <label class="filter-option"><input type="checkbox" value="behind" checked> Behind Goal</label>
+                    <label class="filter-option"><input type="checkbox" value="maintaining" checked> Maintaining</label>
+                    <label class="filter-option"><input type="checkbox" value="no-data" checked> No data</label>
+                </div>
+            </div>
+        </div>
+        <div id="overall-card-container" class="cards-container"></div>
+        <div id="attendance-cards-container" class="cards-container"></div>
+
+        <div id="notes"></div>
+
+        <div id="subject-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-subject-title">Subject Name</h2>
+                    <div class="modal-actions">
+                        <div id="modal-group-select-container"></div>
+                        <button id="modal-close-btn" class="close-btn"><i class="ti ti-x"></i></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-stats-summary">
+                        <div class="modal-circular-progress" id="modal-circular-progress">
+                            <div class="progress-inner">
+                                <span id="modal-attendance-percent">0%</span>
+                            </div>
+                        </div>
+                        <div class="modal-stats-text">
+                            <p class="stats-row">
+                                <span class="val present">Present: <span id="modal-present-count">0</span></span>
+                                <span class="val absent">Absent: <span id="modal-absent-count">0</span></span>
+                                <span class="val total">Total: <span id="modal-total-count">0</span></span>
+                            </p>
+                            <p class="goal-row">Attendance Goal: <span id="modal-goal-percent">75%</span></p>
+                            <p class="your-attendance-row">Your Attendance: <span id="modal-your-attendance">0%</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="modal-advice-text" class="modal-advice-text"></div>
+                    <div id="modal-calendar-container" class="modal-calendar-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-navbar">
+        <a href="/calendar/" class="nav-item">
+            <i class="ti ti-calendar"></i>
+            <span>Calendar</span>
+        </a>
+        <a href="/stats/" class="nav-item active">
+            <i class="ti ti-chart-bar"></i>
+            <span>Stats</span>
+        </a>
+        <a href="/schedules/" class="nav-item">
+            <i class="ti ti-book"></i>
+            <span>Schedules</span>
+        </a>
+    </nav>
+
+    <script src="/assets/class-manager.js"></script>
+    <script src="/assets/class-switcher.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

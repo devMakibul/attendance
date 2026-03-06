@@ -1,0 +1,95 @@
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo img {
+    height: 28px;
+    width: 28px;
+    border-radius: 8px;
+
+}
+
+.navbar .page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .navbar .page-title {
+        font-size: 1.2rem;
+    }
+
+    .navbar .logo img {
+        height: 28px;
+        width: 28px;
+    }
+}
+
+.logo-container {
+    display: grid;
+    align-items: center;
+    height: 40px;
+
+    overflow: hidden;
+}
+
+.logo-container .logo,
+.logo-container .sync-status {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.logo-container .logo {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+
+.logo-container .sync-status {
+    transform: translateY(200%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.logo-container .logo.prepare {
+    transition: none;
+    transform: translateY(150%);
+    opacity: 0;
+}
+
+.logo-container .logo.exit {
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-container .logo.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.logo-container .sync-status.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.logo-container .sync-status.exit {
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+}

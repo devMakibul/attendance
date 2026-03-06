@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - Manage Schedules</title>
+  <meta name="title" content="Attendance Tracker">
+  <meta content='Personal class attendance tracking tool' name='description' />
+  <meta content='website' property='og:type' />
+  <meta content='https://attendance.makibul.com/schedules/' property='og:url' />
+  <meta content='Attendance Tracker - Personal class attendance tracking tool' property='og:title' />
+  <meta content='Personal class attendance tracking tool' property='og:description' />
+  <meta content='/assets/meta-banner.jpg' property='og:image' />
+  <meta content='summary_large_image' property='twitter:card' />
+  <meta content='@devMakibul' name='twitter:site' />
+  <meta content='@devMakibul' name='twitter:creator' />
+  <meta content='https://attendance.makibul.com/schedules/' property='twitter:url' />
+  <meta content='Attendance Tracker - Personal class attendance tracking tool' property='twitter:title' />
+  <meta content='Personal class attendance tracking tool' property='twitter:description' />
+  <meta content='/assets/meta-banner.jpg' property='twitter:image' />
+  <link href='/assets/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180' />
+  <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+  <link href='/assets/manifest.json' rel='manifest' />
+  <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="c14842ae-4407-4257-837d-42328a45648b"
+    async></script>
+  <link rel="stylesheet" href="/schedules/style.css">
+  <link rel="stylesheet" href="/assets/class-switcher.css">
+  <script src="/assets/icons/icons.js"></script>
+  <link rel="stylesheet" href="/assets/bottom-nav.css">
+  <link rel="stylesheet" href="/assets/navbar.css">
+  <script src="/assets/navbar.js"></script>
+  <link rel="stylesheet" href="/assets/skeleton.css">
+
+  <script src="/assets/firebase-config.js" type="module"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo-container">
+      <div class="logo active">
+        <img src="/assets/favicon.ico" alt="Logo">
+        <h1 class="page-title">Schedules</h1>
+      </div>
+      <div id="sync-status-indicator" class="sync-status" style="display: none;"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/"><i class="ti ti-home"></i> <span>Home</span></a></li>
+      <li class="active-page"><a href="/schedules/"><i class="ti ti-book"></i> <span>Schedules</span></a></li>
+      <li><a href="/calendar/"><i class="ti ti-calendar"></i> <span>Calendar</span></a></li>
+      <li><a href="/stats/"><i class="ti ti-chart-bar"></i> <span>Stats</span></a></li>
+      <li><a href="/settings/"><i class="ti ti-settings"></i> <span>Settings</span></a></li>
+    </ul>
+    <div class="wavy-line"></div>
+  </nav>
+
+  <div id="subjects-skeleton" class="skeleton-container">
+    <div style="margin: 0 auto;">
+      <div class="info-wrap">
+        <div class="table-info skeleton-box"
+          style="max-width: 600px; margin: auto; height: 119px; border-radius: 20px; margin-top: 0;"></div>
+      </div>
+    </div>
+    <div class="calendar-data">
+      <div class="skeleton-box" style="height: 30px; width: 40%; margin: 20px auto; border-radius: 10px;"></div>
+      <div class="skeleton-box skeleton-subject-list-card"></div>
+      <div class="skeleton-box skeleton-subject-list-card"></div>
+    </div>
+  </div>
+
+  <div id="container" style="display: none;">
+
+    <div class="info-wrap">
+      <div id="info"></div>
+    </div>
+
+  </div>
+
+  <div class="calendar-data" id="subjects-calendar-data" style="display: none;">
+
+    <div id="no-subjects">
+      <div class="check-data">
+        <div class="check-data-availability">
+          <div id="subjects-not-available" class="not-available">
+            <span class="tick"><i class="ti ti-books-off"></i></span>
+            <div>
+              <strong>You don't have any schedules set for this new class.</strong><br>Import or Create one.
+              <br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="timetable-display"></div>
+
+    <div class="new-list-buttons" id="actions">
+      <button id="upload-timetable"><i class="ti ti-file-import"></i> Import schedules</button>
+      <button id="create-table"><i class="ti ti-plus"></i> Create schedules</button>
+    </div>
+
+    <div id="unused-subjects-section" style="display: none;"></div>
+
+  </div>
+
+  <div id="popup" style="display: none;">
+    <div class="popup-content">
+      <h3 class="popup-title">Confirm Timetable</h3>
+      <div id="popup-info"></div>
+      <p>Do you want to add these tables?</p>
+      <div class="popup-btns">
+        <button id="cancel-timetable">Cancel</button>
+        <button id="confirm-timetable">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup-create" style="display: none;">
+    <div class="popup-content">
+      <div id="popup-create-info"></div>
+    </div>
+  </div>
+
+  <div id="customModal" class="modal">
+    <div class="modal-content">
+      <p id="modalMessage"></p>
+      <div class="modal-buttons">
+        <button id="modalConfirm"><i class="ti ti-check"></i>OK</button>
+        <button id="modalCancel"><i class="ti ti-x"></i> Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="customAlert" class="modal">
+    <div class="modal-content">
+      <p id="alertMessage"></p>
+      <button id="alertConfirm"><i class="ti ti-check"></i>OK</button>
+    </div>
+  </div>
+
+  <nav class="bottom-navbar">
+    <a href="/calendar/" class="nav-item">
+      <i class="ti ti-calendar"></i>
+      <span>Calendar</span>
+    </a>
+    <a href="/stats/" class="nav-item">
+      <i class="ti ti-chart-bar"></i>
+      <span>Stats</span>
+    </a>
+    <a href="/schedules/" class="nav-item active">
+      <i class="ti ti-book"></i>
+      <span>Schedules</span>
+    </a>
+  </nav>
+
+  <script src="/assets/class-manager.js"></script>
+  <script src="/assets/class-switcher.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

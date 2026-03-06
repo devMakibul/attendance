@@ -1,0 +1,106 @@
+{
+  "name": "Attendance Calendar",
+  "short_name": "Attendance",
+  "description": "This is your ultimate destination for tracking your college or school attendance easily. \nMake your tracking smoother by installing this website as a PWA to launch directly from your home screen without needing to open any browser.",
+  "id": "attendanceMakibul",
+  "theme_color": "#3139fb",
+  "background_color": "#3139fb",
+  "display": "standalone",
+  "orientation": "portrait",
+  "dir": "ltr",
+  "scope": "/",
+  "start_url": "/calendar/?source=pwa",
+  "lang": "en-US",
+  "categories": [
+    "productivity",
+    "utilities",
+    "education"
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://attendance.makibul.com/assets/manifest.json",
+      "id": "attendanceMakibul"
+    }
+  ],
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshots/shot1.png",
+      "sizes": "400x822",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/images/screenshots/shot2.png",
+      "sizes": "400x822",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/images/screenshots/shot3.png",
+      "sizes": "400x822",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/images/screenshots/shot4.png",
+      "sizes": "400x822",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Manage Subjects",
+      "short_name": "Subjects",
+      "description": "Create, upload, search or manage subjects list for your class",
+      "url": "/subjects/",
+      "icons": [
+        {
+          "src": "subjects_96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Stats",
+      "short_name": "Stats",
+      "description": "Get insight of attendance and know which class you bunked the most",
+      "url": "/stats/",
+      "icons": [
+        {
+          "src": "stats_96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Homepage",
+      "short_name": "Homepage",
+      "description": "Explore the landing page of the attendance tracking tool and know how to use it properly",
+      "url": "https://attendance.makibul.com/",
+      "icons": [
+        {
+          "src": "homepage_96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
