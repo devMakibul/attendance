@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Attendance</title>
+    <meta name="title" content="Attendance Tracker - 404">
+    <link href='/assets/favicon.ico' rel='shortcut icon' sizes='any' type='image/png' />
+    <script src="/assets/icons/icons.js"></script>
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/stats/style.css">
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+            color: var(--text-color, #333);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary-color, #3139FB);
+            margin: 0;
+            line-height: 1;
+            text-shadow: 4px 4px 0px rgba(49, 57, 251, 0.1);
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin: 20px 0 10px;
+            color: var(--text-color, #333);
+        }
+
+        .error-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted, #555);
+            margin-bottom: 40px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color, #3139FB);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(49, 57, 251, 0.2);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(49, 57, 251, 0.3);
+        }
+
+        .home-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Float animation for the 404 */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <div class="logo active">
+                <img src="/assets/favicon.ico" alt="Logo">
+                <h1 class="page-title">Attendance Tracker</h1>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/login/"><i class="ti ti-user"></i> <span>Login</span></a></li>
+        </ul>
+        <div class="wavy-line"></div>
+    </nav>
+
+    <div id="container">
+        <div class="info-wrap">
+
+        </div>
+    </div>
+
+    <div class="page-container">
+        <h1 class="error-code floating">404</h1>
+        <h2 class="error-title">Oops! You wandered too far.</h2>
+        <p class="error-desc">Looks like this page took a day off. We can't find the schedule for the URL you requested.
+        </p>
+        <a href="/" class="home-btn">
+            <i class="ti ti-home"></i> Back to Safety
+        </a>
+    </div>
+
+    <footer>
+        <h2>Attendance</h2>
+        <div class="explore">
+            <span>Explore</span>
+            <a href="/pages/about/"><i class="ti ti-help-circle"></i> About</a>
+            <a href="/pages/privacy/"><i class="ti ti-shield"></i> Privacy</a>
+            <a href="/pages/disclaimer/"><i class="ti ti-info-circle"></i> Disclaimer</a>
+            <a href="/pages/sitemap/"><i class="ti ti-sitemap"></i> Sitemap</a>
+        </div>
+
+        <div class="dev">
+            <h3>made by <a href="https://makibul.com" target="_blank">Makibul</a>.</h3>
+            <a class="social" href="https://makibul.com" target="_blank"><i class="ti ti-world"></i></a>
+            <a class="social" href="mailto:contactmakibul+attendance@gmail.com" target="_blank"><i
+                    class="ti ti-mail"></i></a>
+            <a class="social" href="https://github.com/devMakibul" target="_blank"><i
+                    class="ti ti-brand-github"></i></a>
+            <a class="social" href="https://t.me/mak1bul" target="_blank"><i class="ti ti-brand-telegram"></i></a>
+            <a class="social" href="https://paypal.me/mak1bul" target="_blank"><i class="ti ti-brand-paypal"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    document.body.classList.add("scrolled");
+                } else {
+                    document.body.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
