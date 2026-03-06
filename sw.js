@@ -1,4 +1,4 @@
-const CACHE_NAME = 'attendance-static-v1';
+const CACHE_NAME = 'attendance-static-v2';
 
 self.addEventListener('install', event => {
     self.skipWaiting();
