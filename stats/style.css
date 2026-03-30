@@ -188,7 +188,6 @@ body {
   background-color: #f8f8ff;
   border-radius: 20px;
   border: 1px solid rgba(49, 57, 251, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   color: #000;
   font-weight: 600;
   width: auto;
@@ -231,7 +230,6 @@ body {
   background-color: #f8f8ff;
   border-radius: 20px;
   border: 1px solid rgba(49, 57, 251, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   color: #000;
   font-weight: 600;
 }
@@ -259,7 +257,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .filter-badge.hidden {
@@ -276,12 +273,12 @@ body {
   right: 0;
   margin-top: 5px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ededed;
 }
 
@@ -894,12 +891,11 @@ footer .dev .social {
 .subject-card {
   background-color: #f8f8ff;
 
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 15px 15px 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border: 1px solid rgba(49, 57, 251, 0.1);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -919,16 +915,16 @@ footer .dev .social {
 .subject-card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #000;
+  color: #444;
 }
 
 .status-badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 12px;
+  padding: 3px 8px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   width: fit-content;
 }
@@ -988,8 +984,8 @@ footer .dev .social {
 }
 
 .progress-inner {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background-color: #f8f8ff;
   border-radius: 50%;
   display: flex;
